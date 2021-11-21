@@ -23,7 +23,19 @@ An interactive side-dashboard is created using the streamlit st.sidebar call whi
 
 After training using the parameters selected by the user, the tuned model is built and ready to be tested on our testing data. The classification plot and confusion matrix is displayed for the model selected along with the model metrics: Accuracy, Precision, Recall, F1-Score, Mean Squared Error, Execution Time. The user can observe real-time changes in the plots and metrics as they change the model parameters further.
 
-The next section being USer Prediction.
+The 7 models (optimum tuning) performed as follows: <br>
+`Criterion: Accuracy`
+Model | Accuracy (Heart Attack / Breast Cancer)
+------------ | -------------
+Logistic Regression | **91.803% / 100.0%**
+KNN | **86.89% / 96.49%**
+SVM | **93.44% / 100.0%**
+Decision Trees | **52.56% / 60.53%**
+Random Forest | **90.164% / 98.24%**
+Gradient Boosting | **88.53% / 96.49%**
+XGBoost | **95.08% / 94.737%**
+
+The next section being User Prediction.
 In this section, the user can use any model developed above to predict their status (High Risk / Low Risk) using their own values. (Either for Heart Attack or Breast Cancer)
 
 # Screenshots of the web app:
@@ -44,7 +56,7 @@ In this section, the user can use any model developed above to predict their sta
  
  <table style="width:100%" align="center">
   <tr>
-    <th><img src="img/flowchart.png"height=600 width=250/></th>
+    <th><img src="img/flow.png"height=600 width=250/></th>
   </tr>
  </table>
 
