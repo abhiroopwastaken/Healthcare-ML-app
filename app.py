@@ -26,8 +26,11 @@ from sklearn.decomposition import PCA
 start_time=time.time()  #Program Start time
 #Titles
 tit1,tit2 = st.columns((4, 1))
-tit1.markdown("<h1 style='text-align: center;'><u>Machine Learning in Healthcare</u> </h1>",unsafe_allow_html=True)
-tit2.image("healthcare2.png")
+tit1.markdown("<h1 style='text-align: center;'><u>Machine Learning Healthcare App</u> </h1>",unsafe_allow_html=True)
+tit2.image("img/healthcare2.png")
+st.markdown('''
+**Credit:** App built in `Python` + `Streamlit` by Abhiroop Agarwal(101803109)
+''')
 st.sidebar.title("Dataset and Classifier")
 
 dataset_name=st.sidebar.selectbox("Select Dataset: ",('Heart Attack',"Breast Cancer"))
@@ -37,12 +40,12 @@ classifier_name = st.sidebar.selectbox("Select Classifier: ",("Logistic Regressi
 LE=LabelEncoder()
 def get_dataset(dataset_name):
     if dataset_name=="Heart Attack":
-        data=pd.read_csv("https://raw.githubusercontent.com/advikmaniar/ML-Healthcare-Web-App/main/Data/heart.csv")
+        data=pd.read_csv("https://raw.githubusercontent.com/abhiroopwastaken/Healthcare-ML-app/main/Datasets/heart.csv")
         st.header("Heart Attack Prediction")
         return data
 
     else:
-        data=pd.read_csv("https://raw.githubusercontent.com/advikmaniar/ML-Healthcare-Web-App/main/Data/BreastCancer.csv")
+        data=pd.read_csv("https://raw.githubusercontent.com/abhiroopwastaken/Healthcare-ML-app/main/Datasets/BreastCancer.csv")
         
         data["diagnosis"] = LE.fit_transform(data["diagnosis"])
         data.replace([np.inf, -np.inf], np.nan, inplace=True)
